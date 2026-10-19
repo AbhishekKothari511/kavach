@@ -152,6 +152,52 @@ section[data-testid="stSidebar"] * { color: var(--text-dark) !important; }
     line-height: 1.45;
 }
 
+/* ── Comparison section ── */
+.diff-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.4rem;
+}
+.diff-header {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.diff-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem;
+}
+.diff-col {
+    background: #faf8f5;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+}
+.diff-col-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+}
+.tradition-title { color: #8a624a; }
+.kavach-title { color: #5a4b81; }
+.diff-point {
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    line-height: 1.45;
+    margin-bottom: 0.55rem;
+    padding-left: 0.6rem;
+    border-left: 3px solid var(--border);
+}
+.diff-point strong { color: var(--text-dark); }
+
 /* ── Explain cards ── */
 .explain-row {
     display: grid;
@@ -452,6 +498,42 @@ st.markdown("""
     <div class="novelty-item">
       <div class="novelty-item-title">🍃 Lightweight Edge Inference</div>
       <div class="novelty-item-body">Achieves sub-millisecond classification on <strong>commodity CPUs</strong> without requiring specialized GPU clusters or heavy appliances.</div>
+    </div>
+  </div>
+</div>
+
+<div class="diff-card">
+  <div class="diff-header">⚖️ How Project Kavach Differs from Traditional Firewalls</div>
+  <div class="diff-grid">
+    <div class="diff-col">
+      <div class="diff-col-title tradition-title">🧱 Traditional Firewall</div>
+      <div class="diff-point">
+        <strong>Static Rules & Ports:</strong> Filters traffic purely by fixed IP/Port rules (e.g. Allow Port 443). Malicious payloads hidden inside allowed ports bypass undetected.
+      </div>
+      <div class="diff-point">
+        <strong>Blind to Encrypted Traffic:</strong> Cannot inspect encrypted (HTTPS/TLS) traffic without invasive SSL/TLS decryption (man-in-the-middle).
+      </div>
+      <div class="diff-point">
+        <strong>Vulnerable to Zero-Days:</strong> Relies entirely on known signature databases; blind to new, mutated, or polymorphic zero-day attacks.
+      </div>
+      <div class="diff-point">
+        <strong>Isolated Packets:</strong> Evaluates individual packets without understanding bidirectional flow dynamics over time.
+      </div>
+    </div>
+    <div class="diff-col">
+      <div class="diff-col-title kavach-title">🛡️ Project Kavach (AI Behavioral NIDS)</div>
+      <div class="diff-point">
+        <strong>Behavioral AI Classification:</strong> Examines deep mathematical patterns of the flow regardless of which port or protocol is being abused.
+      </div>
+      <div class="diff-point">
+        <strong>Zero-Payload Privacy:</strong> Analyzes flow metadata (packet intervals, size variance, flag ratios) — detects attacks inside encrypted streams without decryption.
+      </div>
+      <div class="diff-point">
+        <strong>Zero-Day Resilience:</strong> Machine learning model detects anomalous behavioral deviations from baseline benign traffic without needing fixed signatures.
+      </div>
+      <div class="diff-point">
+        <strong>Temporal Micro-Flows:</strong> Aggregates packets into 5-second bidirectional conversations and computes 50+ deep statistical features.
+      </div>
     </div>
   </div>
 </div>
