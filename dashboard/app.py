@@ -220,45 +220,66 @@ section[data-testid="stSidebar"] * { color: var(--text-dark) !important; }
 }
 .diff-point strong { color: var(--text-dark); }
 
-/* ── Tabs (Modern Pastel Pill Bar) ── */
-.stTabs [data-baseweb="tab-list"] {
+/* ── Tabs (Pure Solid Black Font & Modern Pastel Capsule) ── */
+.stTabs [data-baseweb="tab-list"],
+div[data-testid="stTabs"] [data-baseweb="tab-list"] {
     display: flex !important;
-    gap: 0.5rem !important;
+    gap: 0.6rem !important;
     background: #f2ece4 !important;
-    padding: 0.35rem 0.45rem !important;
+    padding: 0.4rem 0.5rem !important;
     border-radius: 12px !important;
     border: 1px solid var(--border) !important;
     margin-bottom: 1.5rem !important;
 }
-.stTabs [data-baseweb="tab-highlight"],
-.stTabs [data-baseweb="tab-border"] {
-    display: none !important; /* Removes harsh red underline */
+
+/* Hide default red highlight bar */
+[data-baseweb="tab-highlight"],
+div[data-testid="stTabs"] [data-baseweb="tab-highlight"],
+[data-baseweb="tab-border"],
+div[data-testid="stTabs"] [data-baseweb="tab-border"] {
+    display: none !important;
+    background-color: transparent !important;
+    height: 0 !important;
 }
-.stTabs [data-baseweb="tab"] {
+
+/* FORCE ALL TAB TEXT TO SOLID BLACK */
+button[data-baseweb="tab"],
+button[data-baseweb="tab"] *,
+button[data-baseweb="tab"] p,
+button[data-baseweb="tab"] span,
+button[data-baseweb="tab"] div,
+[data-testid="stTabs"] button,
+[data-testid="stTabs"] button *,
+[data-testid="stTabs"] button p,
+[data-testid="stTabs"] button span,
+[data-testid="stTabs"] button div,
+.stTabs [data-baseweb="tab"],
+.stTabs [data-baseweb="tab"] * {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+button[data-baseweb="tab"],
+[data-testid="stTabs"] button {
     background: transparent !important;
     border: 1px solid transparent !important;
     border-radius: 9px !important;
     padding: 0.55rem 1.15rem !important;
-    color: #3b322c !important;
-    font-size: 0.88rem !important;
-    font-weight: 600 !important;
     transition: all 0.2s ease !important;
 }
-.stTabs [data-baseweb="tab"] * {
-    color: #3b322c !important; /* Force all text & icons to be dark & readable */
-    font-weight: 600 !important;
-}
-.stTabs [data-baseweb="tab"]:hover {
-    background: rgba(255, 255, 255, 0.7) !important;
-}
-.stTabs [data-baseweb="tab"][aria-selected="true"] {
+
+button[data-baseweb="tab"]:hover {
     background: #ffffff !important;
-    border: 1px solid var(--lavender) !important;
-    box-shadow: 0 2px 6px rgba(107, 63, 160, 0.08) !important;
 }
-.stTabs [data-baseweb="tab"][aria-selected="true"] * {
-    color: #5c358e !important; /* Deep lavender for active tab text */
-    font-weight: 700 !important;
+
+button[data-baseweb="tab"][aria-selected="true"],
+[data-testid="stTabs"] button[aria-selected="true"] {
+    background: #ffffff !important;
+    border: 2px solid #c8b6e2 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
 }
 
 /* ── Buttons ── */
