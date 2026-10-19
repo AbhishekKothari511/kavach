@@ -38,25 +38,25 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bg:         #f8f4f0;
+    --bg:         #faf7f2;
     --surface:    #ffffff;
-    --sidebar-bg: #f0ebe5;
-    --border:     #e8e0d8;
+    --sidebar-bg: #f4efe9;
+    --border:     #e9e2d8;
 
     --rose:       #f4a7b9;
-    --rose-soft:  #fde8ed;
+    --rose-soft:  #fdebf0;
     --lavender:   #c8b6e2;
     --lav-soft:   #ede8f8;
     --mint:       #a8d5ba;
-    --mint-soft:  #e4f5eb;
+    --mint-soft:  #e7f5ec;
     --peach:      #f9c89b;
-    --peach-soft: #fef0e0;
+    --peach-soft: #fef1e3;
     --sky:        #a3c4f3;
-    --sky-soft:   #e4eefb;
+    --sky-soft:   #e7effb;
 
-    --text-dark:  #3d3530;
-    --text-mid:   #7a6f68;
-    --text-light: #b0a89e;
+    --text-dark:  #342e2b;
+    --text-mid:   #6e645e;
+    --text-light: #9e938b;
 }
 
 html, body, [class*="css"], .stApp {
@@ -74,185 +74,158 @@ section[data-testid="stSidebar"] * { color: var(--text-dark) !important; }
 
 /* ── Main container ── */
 .block-container {
-    padding-top: 2rem !important;
-    max-width: 96% !important;
+    padding-top: 1.8rem !important;
+    max-width: 95% !important;
 }
 
 /* ── Hero banner ── */
 .hero {
-    background: linear-gradient(135deg, #fde8ed 0%, #ede8f8 50%, #e4eefb 100%);
+    background: linear-gradient(135deg, #fdebf0 0%, #ede8f8 50%, #e7effb 100%);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 1.8rem 2.2rem;
-    margin-bottom: 1.6rem;
-}
-.hero-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin: 0 0 0.3rem 0;
-}
-.hero-sub {
-    font-size: 0.95rem;
-    color: var(--text-mid);
-    margin: 0;
+    padding: 1.6rem 2rem;
+    margin-bottom: 1.4rem;
 }
 .hero-badge {
     display: inline-block;
-    background: var(--lav-soft);
-    color: #7c5cbf;
+    background: rgba(255, 255, 255, 0.8);
+    color: #6b3fa0;
     border: 1px solid var(--lavender);
     border-radius: 20px;
     padding: 0.2rem 0.8rem;
     font-size: 0.78rem;
     font-weight: 600;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
 }
-
-/* ── Novelty section ── */
-.novelty-card {
-    background: linear-gradient(135deg, #fbf7f4 0%, #f7f1fb 50%, #f0f7f3 100%);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1.2rem 1.5rem;
-    margin-bottom: 1.4rem;
-}
-.novelty-header {
-    font-size: 0.88rem;
+.hero-title {
+    font-size: 1.9rem;
     font-weight: 700;
     color: var(--text-dark);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    margin: 0 0 0.3rem 0;
 }
-.novelty-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.9rem;
+.hero-sub {
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    margin: 0;
+    line-height: 1.5;
 }
-.novelty-item {
-    background: #ffffff;
+
+/* ── Cards ── */
+.p-card {
+    background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 0.9rem 1rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1rem;
 }
-.novelty-item-title {
+
+/* ── Step-by-step pipeline cards ── */
+.step-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+}
+.step-number {
+    background: var(--lav-soft);
+    color: #6b3fa0;
+    border: 1px solid var(--lavender);
     font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+.step-title {
+    font-size: 1rem;
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 0.3rem;
 }
-.novelty-item-body {
-    font-size: 0.78rem;
+.step-desc {
+    font-size: 0.87rem;
     color: var(--text-mid);
-    line-height: 1.45;
+    line-height: 1.55;
+}
+.step-tag {
+    display: inline-block;
+    background: #fbf8f5;
+    color: var(--text-mid);
+    border: 1px solid var(--border);
+    font-size: 0.75rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: 6px;
+    margin-top: 0.4rem;
+    margin-right: 0.4rem;
+}
+
+/* ── Novelty section ── */
+.novelty-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+.novelty-item {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.3rem;
+}
+.novelty-item-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.35rem;
+}
+.novelty-item-body {
+    font-size: 0.84rem;
+    color: var(--text-mid);
+    line-height: 1.5;
 }
 
 /* ── Comparison section ── */
-.diff-card {
-    background: #ffffff;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1.2rem 1.5rem;
-    margin-bottom: 1.4rem;
-}
-.diff-header {
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-}
 .diff-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.1rem;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
 }
 .diff-col {
-    background: #faf8f5;
+    background: #ffffff;
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem 1.1rem;
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
 }
 .diff-col-title {
-    font-size: 0.88rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    margin-bottom: 0.7rem;
-    padding-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border);
 }
 .tradition-title { color: #8a624a; }
 .kavach-title { color: #5a4b81; }
 .diff-point {
-    font-size: 0.8rem;
+    font-size: 0.84rem;
     color: var(--text-mid);
-    line-height: 1.45;
-    margin-bottom: 0.55rem;
-    padding-left: 0.6rem;
+    line-height: 1.5;
+    margin-bottom: 0.7rem;
+    padding-left: 0.7rem;
     border-left: 3px solid var(--border);
 }
 .diff-point strong { color: var(--text-dark); }
 
-/* ── Explain cards ── */
-.explain-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-bottom: 1.4rem;
-}
-.explain-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1rem 1.2rem;
-}
-.explain-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
-.explain-title { font-size: 0.82rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
-.explain-body  { font-size: 0.84rem; color: var(--text-mid); line-height: 1.5; }
-
-/* ── KPI cards ── */
-.kpi-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin-bottom: 1.4rem;
-}
-.kpi-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.1rem 1.3rem;
-}
-.kpi-label { font-size: 0.76rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
-.kpi-value { font-size: 2rem; font-weight: 700; color: var(--text-dark); line-height: 1; }
-.kpi-sub   { font-size: 0.78rem; color: var(--text-mid); margin-top: 0.35rem; }
-
-/* ── Pill badges ── */
-.pill-safe {
-    display: inline-block;
-    background: var(--mint-soft); color: #2e7d52;
-    border: 1px solid var(--mint);
-    padding: 0.15rem 0.6rem; border-radius: 20px;
-    font-size: 0.74rem; font-weight: 600;
-}
-.pill-alert {
-    display: inline-block;
-    background: var(--rose-soft); color: #c0395a;
-    border: 1px solid var(--rose);
-    padding: 0.15rem 0.6rem; border-radius: 20px;
-    font-size: 0.74rem; font-weight: 600;
-}
-
 /* ── Tabs ── */
 .stTabs [data-baseweb="tab-list"] {
-    gap: 0.4rem;
+    gap: 0.5rem;
     border-bottom: 1px solid var(--border) !important;
     background: transparent !important;
+    margin-bottom: 1.2rem;
 }
 .stTabs [data-baseweb="tab"] {
     background: transparent !important;
@@ -260,8 +233,8 @@ section[data-testid="stSidebar"] * { color: var(--text-dark) !important; }
     border-radius: 8px !important;
     color: var(--text-mid) !important;
     font-weight: 600 !important;
-    font-size: 0.87rem !important;
-    padding: 0.5rem 1rem !important;
+    font-size: 0.88rem !important;
+    padding: 0.55rem 1.1rem !important;
 }
 .stTabs [aria-selected="true"] {
     background: var(--lav-soft) !important;
@@ -305,9 +278,6 @@ section[data-testid="stSidebar"] * { color: var(--text-dark) !important; }
     border-radius: 12px !important;
     overflow: hidden !important;
 }
-
-/* ── Alerts/info ── */
-.stAlert { border-radius: 10px !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -318,12 +288,12 @@ def pastel_layout(fig, title=""):
     fig.update_layout(
         paper_bgcolor="white",
         plot_bgcolor="#fafafa",
-        font=dict(family="Inter", color="#3d3530", size=12),
-        title=dict(text=title, font=dict(size=14, color="#3d3530")),
+        font=dict(family="Inter", color="#342e2b", size=12),
+        title=dict(text=title, font=dict(size=14, color="#342e2b")),
         margin=dict(l=16, r=16, t=40, b=16),
     )
-    fig.update_xaxes(gridcolor="#f0ebe5", linecolor="#e8e0d8")
-    fig.update_yaxes(gridcolor="#f0ebe5", linecolor="#e8e0d8")
+    fig.update_xaxes(gridcolor="#f4efe9", linecolor="#e9e2d8")
+    fig.update_yaxes(gridcolor="#f4efe9", linecolor="#e9e2d8")
     return fig
 
 
@@ -371,18 +341,17 @@ with st.sidebar:
     st.markdown("---")
 
     mode = st.radio(
-        "Mode",
-        ["Simulation (Test Dataset)", "Live Capture (Scapy)"],
+        "Operation Mode",
+        ["Simulation (Benchmark Dataset)", "Live Sniffing (Scapy)"],
         index=0,
-        help="Simulation replays real attack data offline. Live Capture sniffs your actual network."
+        help="Simulation replays labeled attack traffic. Live Sniffing captures actual packets from your Wi-Fi/Ethernet."
     )
 
-    st.markdown("---")
     threshold = st.slider(
-        "Alert Threshold",
+        "Detection Sensitivity",
         min_value=0.10, max_value=0.95,
         value=DEFAULT_ALERT_THRESHOLD, step=0.05,
-        help="If attack probability > this value → flag as Suspicious."
+        help="If attack probability exceeds this threshold → flagged as Suspicious."
     )
     if st.session_state.predictor:
         st.session_state.predictor.threshold = threshold
@@ -434,112 +403,32 @@ with st.sidebar:
             st.rerun()
 
     st.markdown("---")
-    if st.button("⚡ Probe Localhost", use_container_width=True):
+    if st.button("⚡ Safe Localhost Test Probe", use_container_width=True):
         threading.Thread(target=run_localhost_probe, daemon=True).start()
-        st.toast("Safe probe dispatched to 127.0.0.1!")
-    if st.button("🗑  Clear Logs", use_container_width=True):
+        st.toast("Dispatched benign test probe to 127.0.0.1")
+    if st.button("🗑  Clear Alerts Database", use_container_width=True):
         clear_database()
-        st.success("Logs cleared!")
+        st.success("Database cleared!")
         st.rerun()
 
-    auto_refresh = st.checkbox("Auto-refresh every 2s", value=True)
+    auto_refresh = st.checkbox("Auto-refresh (every 2s)", value=True)
 
 
-# ── Hero Banner ───────────────────────────────────────────────────────────────
+# ── Top Hero Banner ───────────────────────────────────────────────────────────
 engine_status = "🟢 Running" if st.session_state.engine_running else "⚪ Idle"
 st.markdown(f"""
 <div class="hero">
   <div class="hero-badge">Project Kavach · Abhishek Kothari · 24BCE2610</div>
   <div class="hero-title">🛡️ Kavach — AI Network Intrusion Detection</div>
   <p class="hero-sub">
-    Kavach watches your network traffic in real time. It analyses each network
-    "flow" (a stream of packets between two machines) and uses a trained AI model
-    to decide: <strong>Is this normal traffic or an attack?</strong>
-    Suspicious flows are flagged instantly with a confidence score. &nbsp;·&nbsp; Status: {engine_status}
+    An AI security shield monitoring live network flows in real time. Rather than snooping into private packet data,
+    Kavach learns flow behavior (traffic rhythm, packet sizes, and handshake ratios) to flag intrusions in milliseconds.
+    &nbsp;·&nbsp; <strong>Engine Status:</strong> {engine_status}
   </p>
 </div>
 """, unsafe_allow_html=True)
 
-# ── What does each section show? ─────────────────────────────────────────────
-st.markdown("""
-<div class="explain-row">
-  <div class="explain-card">
-    <div class="explain-icon">📊</div>
-    <div class="explain-title">KPI Cards</div>
-    <div class="explain-body">Total flows checked, how many were flagged as attacks, current detection rate, and how fast traffic is arriving.</div>
-  </div>
-  <div class="explain-card">
-    <div class="explain-icon">📡</div>
-    <div class="explain-title">Live Flow Stream</div>
-    <div class="explain-body">Every network flow Kavach analyses — source IP, destination, protocol, and whether it's safe (green) or suspicious (pink).</div>
-  </div>
-  <div class="explain-card">
-    <div class="explain-icon">🧠</div>
-    <div class="explain-title">Model Insights</div>
-    <div class="explain-body">Shows which network features (e.g. packet size, flow speed) the AI uses most to make its decisions, plus accuracy metrics.</div>
-  </div>
-</div>
-
-<div class="novelty-card">
-  <div class="novelty-header">✨ Novelty & Core Technical Highlights of Project Kavach</div>
-  <div class="novelty-grid">
-    <div class="novelty-item">
-      <div class="novelty-item-title">🔒 Zero-Payload Inspection</div>
-      <div class="novelty-item-body">Preserves complete user privacy and works across <strong>TLS / HTTPS encrypted traffic</strong> without packet decryption or deep-packet overhead.</div>
-    </div>
-    <div class="novelty-item">
-      <div class="novelty-item-title">⚡ Live-to-Benchmark Parity</div>
-      <div class="novelty-item-body">Bridges academic dataset (CICIDS2017) to <strong>real-time Scapy packet capture</strong> via strictly aligned 50-feature bidirectional flow computation.</div>
-    </div>
-    <div class="novelty-item">
-      <div class="novelty-item-title">💡 Real-Time Explainable AI (XAI)</div>
-      <div class="novelty-item-body">No black-box guesswork. Flags include <strong>driving feature attributions</strong> (inter-arrival time, packet length variance, TCP flags) per intrusion.</div>
-    </div>
-    <div class="novelty-item">
-      <div class="novelty-item-title">🍃 Lightweight Edge Inference</div>
-      <div class="novelty-item-body">Achieves sub-millisecond classification on <strong>commodity CPUs</strong> without requiring specialized GPU clusters or heavy appliances.</div>
-    </div>
-  </div>
-</div>
-
-<div class="diff-card">
-  <div class="diff-header">⚖️ How Project Kavach Differs from Traditional Firewalls</div>
-  <div class="diff-grid">
-    <div class="diff-col">
-      <div class="diff-col-title tradition-title">🧱 Traditional Firewall</div>
-      <div class="diff-point">
-        <strong>Static Rules & Ports:</strong> Filters traffic purely by fixed IP/Port rules (e.g. Allow Port 443). Malicious payloads hidden inside allowed ports bypass undetected.
-      </div>
-      <div class="diff-point">
-        <strong>Blind to Encrypted Traffic:</strong> Cannot inspect encrypted (HTTPS/TLS) traffic without invasive SSL/TLS decryption (man-in-the-middle).
-      </div>
-      <div class="diff-point">
-        <strong>Vulnerable to Zero-Days:</strong> Relies entirely on known signature databases; blind to new, mutated, or polymorphic zero-day attacks.
-      </div>
-      <div class="diff-point">
-        <strong>Isolated Packets:</strong> Evaluates individual packets without understanding bidirectional flow dynamics over time.
-      </div>
-    </div>
-    <div class="diff-col">
-      <div class="diff-col-title kavach-title">🛡️ Project Kavach (AI Behavioral NIDS)</div>
-      <div class="diff-point">
-        <strong>Behavioral AI Classification:</strong> Examines deep mathematical patterns of the flow regardless of which port or protocol is being abused.
-      </div>
-      <div class="diff-point">
-        <strong>Zero-Payload Privacy:</strong> Analyzes flow metadata (packet intervals, size variance, flag ratios) — detects attacks inside encrypted streams without decryption.
-      </div>
-      <div class="diff-point">
-        <strong>Zero-Day Resilience:</strong> Machine learning model detects anomalous behavioral deviations from baseline benign traffic without needing fixed signatures.
-      </div>
-      <div class="diff-point">
-        <strong>Temporal Micro-Flows:</strong> Aggregates packets into 5-second bidirectional conversations and computes 50+ deep statistical features.
-      </div>
-    </div>
-  </div>
-</div>
-""", unsafe_allow_html=True)
-
-# ── Load data ─────────────────────────────────────────────────────────────────
+# ── Load telemetry data ───────────────────────────────────────────────────────
 df_flows = load_recent_flows(limit=1000)
 total     = len(df_flows)
 suspicious = int((df_flows["label"] == "Suspicious").sum()) if total > 0 else 0
@@ -555,31 +444,38 @@ if total > 1:
     except Exception:
         pass
 
-# ── KPI row ───────────────────────────────────────────────────────────────────
-c1, c2, c3, c4 = st.columns(4)
-with c1:
-    st.metric("Flows Analysed", f"{total:,}", help="Total network flows checked since the engine started.")
-with c2:
-    st.metric("Attacks Detected", f"{suspicious:,}",
-              delta=f"{rate:.1f}% of traffic" if total > 0 else None,
-              delta_color="inverse")
-with c3:
-    st.metric("Safe Flows", f"{normal:,}")
-with c4:
-    st.metric("Throughput", f"{flows_per_sec:.1f} flows/s", help="Average flows per second in the last 10 seconds.")
+# ── 4 Main Tabs ───────────────────────────────────────────────────────────────
+tab1, tab2, tab3, tab4 = st.tabs([
+    "📡 Live Monitor & Alerts",
+    "📖 How the AI Model Works",
+    "⚖️ Novelty & vs Traditional Firewalls",
+    "📊 Threat Analytics & Performance",
+])
 
-st.markdown("<br>", unsafe_allow_html=True)
-
-# ── Tabs ──────────────────────────────────────────────────────────────────────
-tab1, tab2, tab3 = st.tabs(["📡 Live Flow Stream", "📊 Threat Analytics", "🧠 Model Insights"])
-
-# ── TAB 1: Live Flow Stream ───────────────────────────────────────────────────
+# ══════════════════════════════════════════════════════════════════════════════
+# TAB 1: Live Monitor & Alerts
+# ══════════════════════════════════════════════════════════════════════════════
 with tab1:
-    st.markdown("**Every row below is one network flow** — a conversation between two machines. "
-                "🟢 Safe flows are normal. 🔴 Suspicious flows are potential attacks.")
+    # KPI row
+    c1, c2, c3, c4 = st.columns(4)
+    with c1:
+        st.metric("Total Flows Analysed", f"{total:,}", help="Total network flows inspected since start.")
+    with c2:
+        st.metric("Attacks Caught", f"{suspicious:,}",
+                  delta=f"{rate:.1f}% attack rate" if total > 0 else None,
+                  delta_color="inverse")
+    with c3:
+        st.metric("Safe Traffic Flows", f"{normal:,}")
+    with c4:
+        st.metric("Throughput", f"{flows_per_sec:.1f} flows/s", help="Flows inspected per second.")
+
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("#### Real-Time Network Flow Stream")
+    st.caption("Each row represents a 5-second bidirectional conversation between two devices. "
+               "Safe flows are marked in soft green; suspicious attacks are flagged in soft rose with confidence score.")
 
     if df_flows.empty:
-        st.info("No data yet. Click **▶ Start Engine** in the sidebar to begin.")
+        st.info("No network activity captured yet. Click **▶ Start Engine** in the left sidebar to begin streaming.")
     else:
         display = df_flows.head(100)[[
             "timestamp", "src_ip", "src_port", "dst_ip", "dst_port",
@@ -588,113 +484,286 @@ with tab1:
 
         def highlight(val):
             if val == "Suspicious":
-                return "background-color: #fde8ed; color: #c0395a; font-weight:600;"
-            return "background-color: #e4f5eb; color: #2e7d52; font-weight:600;"
+                return "background-color: #fdebf0; color: #b83253; font-weight:600;"
+            return "background-color: #e7f5ec; color: #236c46; font-weight:600;"
 
         styled = display.style.map(highlight, subset=["label"]).format({
             "confidence": "{:.1%}", "packets": "{:,}", "bytes": "{:,}"
         })
         try:
-            st.dataframe(styled, use_container_width=True, height=430)
+            st.dataframe(styled, use_container_width=True, height=450)
         except TypeError:
-            st.dataframe(styled, height=430)
+            st.dataframe(styled, height=450)
 
-# ── TAB 2: Threat Analytics ───────────────────────────────────────────────────
+
+# ══════════════════════════════════════════════════════════════════════════════
+# TAB 2: How the AI Model Works (Dedicated Easy Explanation Page)
+# ══════════════════════════════════════════════════════════════════════════════
 with tab2:
+    st.markdown("""
+    <div class="p-card" style="background: linear-gradient(135deg, #ede8f8 0%, #fef1e3 100%);">
+      <div style="font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem;">
+        💡 The Simple Mental Model: The Smart Security Guard
+      </div>
+      <div style="font-size: 0.9rem; color: var(--text-mid); line-height: 1.6;">
+        Imagine a security guard standing at a building entrance. They don't open every visitor's private letters or bags (that would violate privacy and take too long).
+        Instead, they watch <strong>behavioral body language</strong>: Is someone pacing back and forth nervously? Are they testing 50 door handles in 3 seconds?
+        <br><br>
+        <strong>Kavach does the exact same thing for computer networks:</strong> It doesn't read encrypted passwords or message contents.
+        It measures the <em>rhythm, speed, packet size differences, and TCP handshake patterns</em> of network conversations to catch attacks with over 99% accuracy.
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("### 🛠️ Step-by-Step Technical Pipeline")
+
+    st.markdown("""
+    <div class="step-card">
+      <div class="step-number">STEP 1</div>
+      <div class="step-content">
+        <div class="step-title">Raw Packet Sniffing (Scapy Engine)</div>
+        <div class="step-desc">
+          Kavach hooks into the host's physical network adapter (Wi-Fi or Ethernet) using Scapy. It intercepts raw IP packets,
+          reading only packet headers (Source IP, Destination IP, Ports, TCP Flags like SYN/ACK/FIN, and packet byte length).
+        </div>
+        <span class="step-tag">Zero-Payload Access</span>
+        <span class="step-tag">Wi-Fi & Ethernet</span>
+        <span class="step-tag">Non-Intrusive Sniffing</span>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-number">STEP 2</div>
+      <div class="step-content">
+        <div class="step-title">5-Second Micro-Flow Aggregation (Flow Builder)</div>
+        <div class="step-desc">
+          Individual packets don't tell the whole story. Kavach groups packets into <strong>bidirectional conversations (Flows)</strong>
+          between client and server across a 5-second sliding window. For every flow, it computes <strong>50 statistical features</strong>:
+          <br>• <strong>Packet Size Variance:</strong> Do packets vary naturally in size, or are they uniform dummy probe payloads?
+          <br>• <strong>Inter-Arrival Times (IAT):</strong> How many milliseconds between packets? Automated bot attacks burst with inhuman precision.
+          <br>• <strong>Forward vs. Backward Balance:</strong> In a DoS attack, millions of bytes flow inbound while zero bytes flow outbound.
+        </div>
+        <span class="step-tag">50 Features Computed</span>
+        <span class="step-tag">Bidirectional Dynamics</span>
+        <span class="step-tag">5s Temporal Window</span>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-number">STEP 3</div>
+      <div class="step-content">
+        <div class="step-title">Feature Normalization (StandardScaler)</div>
+        <div class="step-desc">
+          Raw feature numbers have vastly different scales — for example, <code>Flow Duration</code> might be 5,000,000 microseconds,
+          while <code>SYN Flag Count</code> is just 1. The pre-fitted <strong>StandardScaler</strong> centers each feature around mean 0
+          with unit variance so no single metric unfairly biases the model.
+        </div>
+        <span class="step-tag">Z-Score Normalization</span>
+        <span class="step-tag">Numeric Stability</span>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-number">STEP 4</div>
+      <div class="step-content">
+        <div class="step-title">The Ensemble Committee (Random Forest with 100 Trees)</div>
+        <div class="step-desc">
+          Instead of relying on a single fallible decision rule, Kavach deploys a <strong>Random Forest of 100 independent Decision Trees</strong>.
+          Each tree independently evaluates different subsets of the 50 flow features and casts a vote: <em>Normal (0)</em> or <em>Attack (1)</em>.
+          <br><br>
+          Using <strong>Balanced Class Weighting</strong>, the algorithm prevents normal traffic (which accounts for ~80% of volume) from
+          drowning out rare, dangerous intrusion attempts.
+        </div>
+        <span class="step-tag">100 Decision Trees</span>
+        <span class="step-tag">Balanced Class Weights</span>
+        <span class="step-tag">Majority Voting</span>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-number">STEP 5</div>
+      <div class="step-content">
+        <div class="step-title">Confidence Scoring & Explainability (XAI)</div>
+        <div class="step-desc">
+          Kavach tallies all 100 tree votes to produce an Attack Probability:
+          <br>• If 92 out of 100 trees vote Attack → <strong>Confidence = 92.0%</strong>.
+          <br>• If Confidence > Alert Threshold (default 50%), an alert is logged to SQLite and sent to the dashboard.
+          <br>• <strong>Explainable AI:</strong> The system surfaces the top 3 mathematical reasons why the alert was fired (e.g., <em>High SYN count, zero backward payload, short flow duration</em>).
+        </div>
+        <span class="step-tag">Sub-Millisecond Inference</span>
+        <span class="step-tag">Explainable Triggers</span>
+        <span class="step-tag">SQLite Persistence</span>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# TAB 3: Novelty & vs Traditional Firewalls
+# ══════════════════════════════════════════════════════════════════════════════
+with tab3:
+    st.markdown("### ✨ The 4 Novelty Pillars of Project Kavach")
+    st.caption("Key technological innovations that differentiate Kavach from conventional network tools.")
+
+    st.markdown("""
+    <div class="novelty-grid">
+      <div class="novelty-item">
+        <div class="novelty-item-title">🔒 1. Zero-Payload Inspection</div>
+        <div class="novelty-item-body">
+          Preserves complete user privacy and operates naturally across <strong>TLS / HTTPS encrypted traffic</strong> without invasive packet decryption or SSL interception.
+        </div>
+      </div>
+      <div class="novelty-item">
+        <div class="novelty-item-title">⚡ 2. Live-to-Benchmark Parity</div>
+        <div class="novelty-item-body">
+          Bridges the gap between academic dataset training (CICIDS2017) and <strong>real-time Scapy sniffing</strong> via mathematical feature parity across 50 bidirectional metrics.
+        </div>
+      </div>
+      <div class="novelty-item">
+        <div class="novelty-item-title">💡 3. Real-Time Explainable AI (XAI)</div>
+        <div class="novelty-item-body">
+          No black-box guesses. Flags include <strong>driving feature attributions</strong> (inter-arrival time, packet length variance, TCP flags) so analysts know *why* an alert fired.
+        </div>
+      </div>
+      <div class="novelty-item">
+        <div class="novelty-item-title">🍃 4. Lightweight Edge Inference</div>
+        <div class="novelty-item-body">
+          Achieves sub-millisecond classification on <strong>commodity CPUs</strong> without requiring specialized GPU clusters or expensive hardware appliances.
+        </div>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("### ⚖️ Detailed Comparison: Kavach vs. Traditional Firewalls")
+
+    st.markdown("""
+    <div class="diff-grid">
+      <div class="diff-col">
+        <div class="diff-col-title tradition-title">🧱 Traditional Firewalls (Packet/Stateful)</div>
+        <div class="diff-point">
+          <strong>Static Rules:</strong> Filters based purely on static IP and Port numbers (e.g. Block Port 22). Malicious traffic on open ports (80/443) passes straight through.
+        </div>
+        <div class="diff-point">
+          <strong>Blind to Encrypted Payloads:</strong> Cannot see inside TLS/HTTPS without expensive SSL termination (man-in-the-middle decryption), which harms user privacy.
+        </div>
+        <div class="diff-point">
+          <strong>Fails on Zero-Days:</strong> Relies on known signature lists. New or mutated attack variants bypass detection until vendors issue updates.
+        </div>
+        <div class="diff-point">
+          <strong>Perimeter Only:</strong> Positioned at the network edge; blind to internal lateral compromise between devices on the same subnet.
+        </div>
+        <div class="diff-point">
+          <strong>Opaque Logs:</strong> Outputs simple "Deny / Allow" logs with no behavioral or statistical context.
+        </div>
+      </div>
+
+      <div class="diff-col">
+        <div class="diff-col-title kavach-title">🛡️ Project Kavach (AI Behavioral NIDS)</div>
+        <div class="diff-point">
+          <strong>Behavioral Analysis:</strong> Evaluates flow statistical geometry regardless of which port or protocol is being abused.
+        </div>
+        <div class="diff-point">
+          <strong>Encrypted-Traffic Native:</strong> Analyzes flow metadata (packet intervals, size variance, flag ratios) — catches attacks inside encrypted sessions without decryption.
+        </div>
+        <div class="diff-point">
+          <strong>Zero-Day Resilience:</strong> Detects mathematical deviations from baseline normal traffic, catching novel and mutated attacks.
+        </div>
+        <div class="diff-point">
+          <strong>Internal Network Visibility:</strong> Sniffs interface traffic to detect internal reconnaissance, port scans, and lateral movement.
+        </div>
+        <div class="diff-point">
+          <strong>Explainable Output:</strong> Provides confidence scores and lists the exact mathematical features that triggered the alert.
+        </div>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# TAB 4: Threat Analytics & Performance
+# ══════════════════════════════════════════════════════════════════════════════
+with tab4:
     if df_flows.empty:
-        st.info("Data will appear here once the engine is running.")
+        st.info("Analytics charts will appear once traffic flows are captured.")
     else:
         a, b = st.columns(2)
-
         with a:
-            st.markdown("**Traffic over time** — how many flows were safe vs suspicious each second.")
+            st.markdown("**Traffic Volume Over Time**")
             try:
                 df_t = df_flows.copy()
                 df_t["second"] = pd.to_datetime(df_t["timestamp"]).dt.strftime("%H:%M:%S")
                 agg = df_t.groupby(["second", "label"]).size().reset_index(name="count")
                 fig = px.area(agg, x="second", y="count", color="label",
                               color_discrete_map={"Normal": "#a8d5ba", "Suspicious": "#f4a7b9"})
-                st.plotly_chart(pastel_layout(fig, "Flow Activity Over Time"), use_container_width=True)
+                st.plotly_chart(pastel_layout(fig, "Flow Classification Activity"), use_container_width=True)
             except Exception as e:
-                st.warning(f"Chart error: {e}")
+                st.warning(f"Chart render error: {e}")
 
         with b:
-            st.markdown("**Top attack sources** — which source IPs triggered the most alerts.")
+            st.markdown("**Top Suspicious IPs Flagged**")
             susp = df_flows[df_flows["label"] == "Suspicious"]
             if susp.empty:
-                st.success("✅ No suspicious IPs detected yet!")
+                st.success("✅ No suspicious IP addresses detected yet!")
             else:
                 top = susp["src_ip"].value_counts().head(8).reset_index()
                 top.columns = ["Source IP", "Alerts"]
                 fig2 = px.bar(top, x="Source IP", y="Alerts",
-                              color="Alerts", color_continuous_scale=["#fde8ed", "#f4a7b9", "#e05880"])
-                st.plotly_chart(pastel_layout(fig2, "Top Suspicious IPs"), use_container_width=True)
+                              color="Alerts", color_continuous_scale=["#fdebf0", "#f4a7b9", "#d95074"])
+                st.plotly_chart(pastel_layout(fig2, "Intrusion Origin Distribution"), use_container_width=True)
 
         c, d = st.columns(2)
         with c:
-            st.markdown("**Protocol split** — what types of traffic Kavach has seen.")
+            st.markdown("**Protocol Distribution**")
             proto = df_flows["protocol"].value_counts().reset_index()
             proto.columns = ["Protocol", "Count"]
             fig3 = px.pie(proto, values="Count", names="Protocol", hole=0.45,
                           color_discrete_sequence=PASTEL_COLORS)
-            st.plotly_chart(pastel_layout(fig3, "Protocol Distribution"), use_container_width=True)
+            st.plotly_chart(pastel_layout(fig3, "Observed Protocols"), use_container_width=True)
 
         with d:
-            st.markdown("**Confidence spread** — how certain the AI was when flagging attacks.")
+            st.markdown("**Alert Confidence Spread**")
             if not susp.empty:
                 fig4 = px.histogram(susp, x="confidence", nbins=15,
                                     color_discrete_sequence=["#c8b6e2"])
-                st.plotly_chart(pastel_layout(fig4, "Detection Confidence"), use_container_width=True)
+                st.plotly_chart(pastel_layout(fig4, "Detection Confidence Histogram"), use_container_width=True)
             else:
-                st.info("No suspicious flows to show confidence for yet.")
+                st.info("No suspicious flows to display confidence spread.")
 
-# ── TAB 3: Model Insights ─────────────────────────────────────────────────────
-with tab3:
-    st.markdown(
-        "Kavach uses a **Random Forest** model trained on the CICIDS2017 dataset — "
-        "a benchmark dataset of real-world network attacks. Below are the results "
-        "from testing on data the model had never seen before."
-    )
-
-    feat_img = MODELS_DIR / "feature_importances.png"
-    cm_img   = MODELS_DIR / "confusion_matrix.png"
-    roc_img  = MODELS_DIR / "roc_curve.png"
-
-    i1, i2 = st.columns(2)
-    with i1:
-        if feat_img.exists():
-            st.image(str(feat_img), caption="Which features matter most to the AI? (higher = more important)")
-        else:
-            st.info("Run `python -m src.train` to generate this chart.")
-    with i2:
-        if cm_img.exists():
-            st.image(str(cm_img), caption="Confusion Matrix — how often the model got it right vs wrong.")
-        elif roc_img.exists():
-            st.image(str(roc_img), caption="ROC Curve — overall detection performance.")
+    st.markdown("---")
+    st.markdown("### 📈 Model Evaluation on Held-Out Test Data")
+    st.caption("Rigorous evaluation metrics on unseen test traffic from the CICIDS2017 benchmark dataset.")
 
     if METRICS_PATH.exists():
-        st.markdown("---")
-        st.markdown("#### 📈 Model Performance on Test Data")
-        st.caption("These scores are from a held-out test set the model never trained on — so they reflect real-world performance.")
         with open(METRICS_PATH) as f:
             m = json.load(f)
         m1, m2, m3, m4 = st.columns(4)
-        m1.metric("Accuracy",  f"{m.get('accuracy',  0)*100:.1f}%", help="Overall correct predictions.")
-        m2.metric("Precision", f"{m.get('precision', 0)*100:.1f}%", help="Of flows flagged as attacks, how many actually were?")
-        m3.metric("Recall",    f"{m.get('recall',    0)*100:.1f}%", help="Of actual attacks, how many did we catch?")
-        m4.metric("F1 Score",  f"{m.get('f1',        0)*100:.1f}%", help="Balance between Precision and Recall.")
+        m1.metric("Overall Accuracy",  f"{m.get('accuracy',  0)*100:.2f}%")
+        m2.metric("Precision",         f"{m.get('precision', 0)*100:.2f}%")
+        m3.metric("Recall (Catch Rate)", f"{m.get('recall',    0)*100:.2f}%")
+        m4.metric("F1 Score",          f"{m.get('f1',        0)*100:.2f}%")
 
         if "per_attack_recall" in m:
-            st.markdown("#### 🔍 Detection Rate by Attack Type")
-            st.caption("How well Kavach detects each specific type of network attack.")
+            st.markdown("##### Per-Attack Type Recall Breakdown")
             atk_df = pd.DataFrame([
-                {"Attack Type": k, "Detection Rate": f"{v*100:.1f}%"}
+                {"Attack Type": k, "Detection Rate": f"{v*100:.2f}%"}
                 for k, v in m["per_attack_recall"].items()
             ])
             st.table(atk_df)
 
+    feat_img = MODELS_DIR / "feature_importances.png"
+    cm_img   = MODELS_DIR / "confusion_matrix.png"
+    if feat_img.exists() or cm_img.exists():
+        i1, i2 = st.columns(2)
+        with i1:
+            if feat_img.exists():
+                st.image(str(feat_img), caption="Feature Importance (Gini Importance Ranking)")
+        with i2:
+            if cm_img.exists():
+                st.image(str(cm_img), caption="Confusion Matrix on Held-out Test Set")
 
-# ── Auto-refresh ──────────────────────────────────────────────────────────────
+
+# ── Auto-refresh loop ─────────────────────────────────────────────────────────
 if auto_refresh and st.session_state.engine_running:
     time.sleep(2.0)
     st.rerun()
