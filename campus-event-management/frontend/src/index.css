@@ -1,9 +1,0 @@
-/* src/index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Custom pastel background for the whole page */
-body {
-  @apply bg-pastel-blue text-gray-800;
-}
