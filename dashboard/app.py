@@ -220,26 +220,45 @@ section[data-testid="stSidebar"] * { color: var(--text-dark) !important; }
 }
 .diff-point strong { color: var(--text-dark); }
 
-/* ── Tabs ── */
+/* ── Tabs (Modern Pastel Pill Bar) ── */
 .stTabs [data-baseweb="tab-list"] {
-    gap: 0.5rem;
-    border-bottom: 1px solid var(--border) !important;
-    background: transparent !important;
-    margin-bottom: 1.2rem;
+    display: flex !important;
+    gap: 0.5rem !important;
+    background: #f2ece4 !important;
+    padding: 0.35rem 0.45rem !important;
+    border-radius: 12px !important;
+    border: 1px solid var(--border) !important;
+    margin-bottom: 1.5rem !important;
+}
+.stTabs [data-baseweb="tab-highlight"],
+.stTabs [data-baseweb="tab-border"] {
+    display: none !important; /* Removes harsh red underline */
 }
 .stTabs [data-baseweb="tab"] {
     background: transparent !important;
     border: 1px solid transparent !important;
-    border-radius: 8px !important;
-    color: var(--text-mid) !important;
-    font-weight: 600 !important;
+    border-radius: 9px !important;
+    padding: 0.55rem 1.15rem !important;
+    color: #3b322c !important;
     font-size: 0.88rem !important;
-    padding: 0.55rem 1.1rem !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
 }
-.stTabs [aria-selected="true"] {
-    background: var(--lav-soft) !important;
-    border-color: var(--lavender) !important;
-    color: #6b3fa0 !important;
+.stTabs [data-baseweb="tab"] * {
+    color: #3b322c !important; /* Force all text & icons to be dark & readable */
+    font-weight: 600 !important;
+}
+.stTabs [data-baseweb="tab"]:hover {
+    background: rgba(255, 255, 255, 0.7) !important;
+}
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    background: #ffffff !important;
+    border: 1px solid var(--lavender) !important;
+    box-shadow: 0 2px 6px rgba(107, 63, 160, 0.08) !important;
+}
+.stTabs [data-baseweb="tab"][aria-selected="true"] * {
+    color: #5c358e !important; /* Deep lavender for active tab text */
+    font-weight: 700 !important;
 }
 
 /* ── Buttons ── */
