@@ -42,6 +42,41 @@ While traditional firewalls act as **gatekeepers at the perimeter**, Kavach oper
 
 ---
 
+## 🧠 How the AI Model Works (In Plain English)
+
+### 💡 The Intuition: The Behavioral Security Guard
+Imagine a security guard standing at a building entrance. They don't open every visitor's private letters or bags (that would violate privacy and take too long). Instead, they watch **behavioral body language**:
+- Is someone testing 50 locked doors in 3 seconds?
+- Is someone running in circles at abnormal speeds?
+- Are they sending out 1,000 requests without waiting for a reply?
+
+**Kavach works the exact same way for network traffic:** It doesn't decrypt your passwords or inspect private messages. It measures the *rhythm, timing, packet length variance, and handshake ratios* of network conversations to identify attacks.
+
+### ⚙️ The 5-Step Pipeline:
+
+1. **Step 1: Raw Packet Sniffing (`src/capture.py`)**  
+   Hooks into the physical network interface (Wi-Fi/Ethernet) via Scapy. Reads IP and TCP/UDP headers (source, destination, ports, flags, byte sizes) without reading packet bodies.
+
+2. **Step 2: 5-Second Micro-Flow Aggregation (`src/flow_builder.py`)**  
+   Packets are grouped into bidirectional conversations ("flows") between two machines. For each 5-second flow, Kavach calculates **50 deep statistical features**:
+   - **Inter-Arrival Times (IAT):** Microsecond spacing between packets (automated bot attacks burst with inhuman precision).
+   - **Packet Length Variance:** Human traffic has natural variance; DDoS and probe tools often spam uniform dummy packet sizes.
+   - **Directional Byte Ratios:** Forward vs. backward packet ratios (e.g. DoS floods send millions of bytes inbound with zero replies).
+   - **TCP Flag Counts:** Ratios of SYN, ACK, FIN, and RST flags (detects half-open SYN floods and stealth port scans).
+
+3. **Step 3: Feature Scaling (`src/predictor.py`)**  
+   Applies a pre-fitted `StandardScaler` to normalize all 50 features around mean 0 with unit variance. This prevents massive values (like 10,000,000 bytes) from drowning out small but critical signals (like 1 TCP SYN flag).
+
+4. **Step 4: The 100-Tree Random Forest Committee (`src/train.py`)**  
+   An ensemble of **100 independent Decision Trees** evaluates the flow features. Each tree asks yes/no questions (e.g., *"Is flow duration < 0.05s and backward packet count == 0?"*) and votes either **Safe (0)** or **Attack (1)**. Balanced class weights ensure rare cyber attacks are never ignored.
+
+5. **Step 5: Confidence Scoring & Explainability (XAI)**  
+   The votes from all 100 trees are aggregated into an **Attack Probability**:
+   - If 94 out of 100 trees vote Attack $\rightarrow$ Confidence = 94.0%.
+   - If Confidence > Sensitivity Threshold (default 50%), an alert is logged with the **top driving feature attributions** explaining *why* it was flagged.
+
+---
+
 ## 🗺️ System Design Diagram
 
 ```
