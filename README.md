@@ -14,6 +14,19 @@ It monitors live network traffic in real time, classifies each network flow as e
 
 ---
 
+## ✨ Core Novelty & Technical Innovation
+
+Traditional intrusion detection systems rely on signature matching (failing against zero-day threats) or Deep Packet Inspection (DPI, which violates privacy and breaks on encrypted traffic). **Kavach introduces four key technical novelties:**
+
+| # | Novelty Pillar | How Kavach Achieves It | Practical Impact |
+|---|---|---|---|
+| **1** | **Zero-Payload Behavioral Inspection** | Extracts pure bidirectional flow metadata (packet lengths, inter-arrival times, TCP flag distribution, and byte ratios) without inspecting payload data. | **100% Privacy-preserving** and inherently robust to modern **TLS / HTTPS encrypted traffic**. |
+| **2** | **Live-to-Benchmark Feature Parity** | Bridges academic dataset training (CICIDS2017) to real-world live traffic by engineering exact 50-feature mathematical parity using Scapy in real time. | Solves the standard "academic lab model fails on live packet interfaces" dilemma. |
+| **3** | **Real-Time Explainable AI (XAI)** | Integrates feature importance attribution directly into live inference alerts, highlighting the top 3-5 driving features per alert. | Security analysts immediately understand *why* an alert fired within milliseconds instead of relying on black-box predictions. |
+| **4** | **Sub-Millisecond Edge Architecture** | Utilizes an optimized Random Forest architecture with balanced class weights rather than resource-heavy deep learning models. | Runs on **standard commodity hardware / CPU** without requiring expensive GPUs or dedicated ASIC hardware. |
+
+---
+
 ## 🗺️ System Design Diagram
 
 ```
