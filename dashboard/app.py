@@ -109,6 +109,49 @@ section[data-testid="stSidebar"] * { color: var(--text-dark) !important; }
     margin-bottom: 0.8rem;
 }
 
+/* ── Novelty section ── */
+.novelty-card {
+    background: linear-gradient(135deg, #fbf7f4 0%, #f7f1fb 50%, #f0f7f3 100%);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.4rem;
+}
+.novelty-header {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.novelty-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.9rem;
+}
+.novelty-item {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+.novelty-item-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.3rem;
+}
+.novelty-item-body {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    line-height: 1.45;
+}
+
 /* ── Explain cards ── */
 .explain-row {
     display: grid;
@@ -388,6 +431,28 @@ st.markdown("""
     <div class="explain-icon">🧠</div>
     <div class="explain-title">Model Insights</div>
     <div class="explain-body">Shows which network features (e.g. packet size, flow speed) the AI uses most to make its decisions, plus accuracy metrics.</div>
+  </div>
+</div>
+
+<div class="novelty-card">
+  <div class="novelty-header">✨ Novelty & Core Technical Highlights of Project Kavach</div>
+  <div class="novelty-grid">
+    <div class="novelty-item">
+      <div class="novelty-item-title">🔒 Zero-Payload Inspection</div>
+      <div class="novelty-item-body">Preserves complete user privacy and works across <strong>TLS / HTTPS encrypted traffic</strong> without packet decryption or deep-packet overhead.</div>
+    </div>
+    <div class="novelty-item">
+      <div class="novelty-item-title">⚡ Live-to-Benchmark Parity</div>
+      <div class="novelty-item-body">Bridges academic dataset (CICIDS2017) to <strong>real-time Scapy packet capture</strong> via strictly aligned 50-feature bidirectional flow computation.</div>
+    </div>
+    <div class="novelty-item">
+      <div class="novelty-item-title">💡 Real-Time Explainable AI (XAI)</div>
+      <div class="novelty-item-body">No black-box guesswork. Flags include <strong>driving feature attributions</strong> (inter-arrival time, packet length variance, TCP flags) per intrusion.</div>
+    </div>
+    <div class="novelty-item">
+      <div class="novelty-item-title">🍃 Lightweight Edge Inference</div>
+      <div class="novelty-item-body">Achieves sub-millisecond classification on <strong>commodity CPUs</strong> without requiring specialized GPU clusters or heavy appliances.</div>
+    </div>
   </div>
 </div>
 """, unsafe_allow_html=True)
