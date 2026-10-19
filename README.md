@@ -27,6 +27,21 @@ Traditional intrusion detection systems rely on signature matching (failing agai
 
 ---
 
+## ⚖️ How Kavach Differs from Traditional Firewalls
+
+While traditional firewalls act as **gatekeepers at the perimeter**, Kavach operates as an **intelligent, behavior-aware internal security analyst**. 
+
+| Capability | 🧱 Traditional Firewalls (Packet Filtering / Stateful) | 🛡️ Project Kavach (AI Behavioral NIDS) |
+|---|---|---|
+| **Inspection Basis** | **Static 5-Tuple**: Checks Source IP, Destination IP, Protocol, Source Port, and Destination Port against predefined rule tables. | **Dynamic Behavioral Dynamics**: Computes 50+ bidirectional flow metrics (inter-arrival variance, packet size distribution, TCP flag ratios). |
+| **Encrypted Traffic (HTTPS/TLS)** | **Blind or Invasive**: Cannot inspect payload without terminating TLS (costly SSL decryption / MITM). Once port 443 is open, attacks pass through. | **Zero-Payload Native**: Extracts statistical flow geometry *without* decryption. Detects attacks hiding inside TLS encrypted sessions. |
+| **Zero-Day & Mutated Attacks** | **Fails**: Has no rules for unseen attack variants until signatures or manual rules are updated by vendors. | **Resilient**: Flags deviations from normal statistical baseline behavior, successfully surfacing zero-day variants. |
+| **Port / Protocol Camouflage** | **Bypassed**: If malicious command-and-control (C2) or exfiltration traffic runs on permitted port 80/443, firewall allows it. | **Detected**: Identifies anomalous flow rates, abnormal byte ratios, and handshake abnormalities regardless of port. |
+| **Internal Lateral Movement** | **Often Blind**: Firewalls monitor boundary perimeters; internal peer-to-peer compromise often goes unnoticed. | **Monitored**: Sniffs local subnet broadcast/interface traffic to catch internal reconnaissance and port scans. |
+| **Decision Explainability** | **Binary / Opaque**: Simple "Deny by Rule #42" log with no contextual behavioral insight. | **Explainable AI (XAI)**: Attributes alerts to top driving statistical features (e.g., abnormally skewed forward/backward packet ratio). |
+
+---
+
 ## 🗺️ System Design Diagram
 
 ```
