@@ -485,6 +485,29 @@ if total > 1:
         pass
 
 # ── 4 Main Tabs ───────────────────────────────────────────────────────────────
+st.markdown("""
+<style>
+/* 100% Guaranteed Solid Black Text for Tabs */
+div[data-testid="stTabs"] button[role="tab"] {
+    background-color: transparent !important;
+}
+div[data-testid="stTabs"] button[role="tab"] * {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+}
+div[data-testid="stTabs"] button[role="tab"][aria-selected="true"] * {
+    color: #492875 !important;
+    -webkit-text-fill-color: #492875 !important;
+    font-weight: 800 !important;
+}
+div[data-testid="stTabs"] [data-baseweb="tab-highlight"] {
+    background-color: #7c5cbf !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 tab1, tab2, tab3, tab4 = st.tabs([
     "📡 Live Monitor & Alerts",
     "📖 How the AI Model Works",
